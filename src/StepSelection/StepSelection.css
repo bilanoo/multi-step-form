@@ -2,8 +2,34 @@
   height: 100%;
 }
 
-.step-selection-container {
+.selection-container {
+  display: flex;
   background-image: url("../assets/images/bg-sidebar-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
+  justify-content: center;
+}
+
+.steps {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 200px;
+  height: 40px;
+  margin-top: 40px;
+}
+
+.selection-button {
+  width: 40px;
+  height: 40px;
+  font-weight: 900;
+  border-radius: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.selection-button:focus {
+  background-color: hsl(206, 94%, 87%);
+  color: black;
 }
