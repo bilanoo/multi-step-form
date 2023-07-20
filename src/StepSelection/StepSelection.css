@@ -1,0 +1,9 @@
+.sidebar {
+  height: 100%;
+}
+
+.step-selection-container {
+  background-image: url("../assets/images/bg-sidebar-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
