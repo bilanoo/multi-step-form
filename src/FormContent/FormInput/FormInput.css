@@ -1,0 +1,32 @@
+p {
+  color: #2b415d;
+}
+
+.input-name {
+  margin-bottom: 0;
+  font-weight: 800;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+}
+
+.input-field,
+.input-field:focus {
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  width: 100%;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: 1rem;
+  padding-left: 10px;
+  font-weight: 700;
+  margin-left: 20px;
+  height: 40px;
+  margin-top: 0;
+  background-color: transparent;
+  color: #2b415d;
+  cursor: pointer;
+}
