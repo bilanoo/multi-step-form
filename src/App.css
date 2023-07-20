@@ -20,6 +20,26 @@ main {
   height: 100%;
 }
 
+.submit-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  height: fit-content;
+}
+
+.next-step-button {
+  margin-left: auto;
+  margin-right: 20px;
+  height: 45px;
+  width: 120px;
+  background-color: #0f315b;
+  font-weight: 800;
+}
+
 @media only screen and (min-width: 992px) {
   main {
     width: 900px;
@@ -29,5 +49,10 @@ main {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .submit-container {
+    grid-column-start: 2;
+    grid-column-end: 2;
   }
 }

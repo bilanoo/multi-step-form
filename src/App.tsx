@@ -16,6 +16,9 @@ function App() {
         >
           <FormContent />
         </div>
+        <div className="submit-container">
+          <button className="next-step-button">Next Step</button>
+        </div>
       </main>
     </>
   );

@@ -79,3 +79,11 @@
     display: none;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .selection-container {
+    display: grid;
+    grid-row-start: 1;
+    grid-row-end: -3;
+  }
+}
