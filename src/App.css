@@ -38,6 +38,11 @@ main {
   width: 120px;
   background-color: #0f315b;
   font-weight: 800;
+  cursor: pointer;
+}
+
+.next-step-button:hover {
+  background-color: hsl(213, 93%, 30%);
 }
 
 @media only screen and (min-width: 992px) {

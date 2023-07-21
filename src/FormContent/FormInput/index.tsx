@@ -4,7 +4,7 @@ interface FormInputProps {
   name: string;
   placeholder: string;
   handleChange: () => void;
-  value?: string | number;
+  value: string | number;
 }
 const FormInput = ({
   name,
@@ -20,6 +20,7 @@ const FormInput = ({
         placeholder={placeholder}
         className="input-field"
         onChange={handleChange}
+        value={value}
       />
     </div>
   );
