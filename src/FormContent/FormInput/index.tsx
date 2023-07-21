@@ -1,22 +1,28 @@
 import "./FormInput.css";
 
 interface FormInputProps {
-  name: string;
+  typeOfInput: string;
+  namePropField: string;
+  inputDescriptionText: string;
   placeholder: string;
-  handleChange: () => void;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: string | number;
 }
 const FormInput = ({
-  name,
+  typeOfInput,
+  namePropField,
+  inputDescriptionText: inputName,
   placeholder,
   value,
   handleChange,
 }: FormInputProps) => {
   return (
     <div className="input-container">
-      <p className="input-name">{name}</p>
+      <p className="input-name">{inputName}</p>
       <input
-        type="text"
+        required
+        type={typeOfInput}
+        name={namePropField}
         placeholder={placeholder}
         className="input-field"
         onChange={handleChange}

@@ -3,14 +3,14 @@ import { create } from "zustand";
 interface FormValues {
   name: string;
   emailAddress: string;
-  phoneNumber: string | number;
+  phoneNumber: string;
   planSelected: string;
   addOns: string[];
 }
 
 interface InputFormStore {
   formValues: FormValues;
-  setFormValues: (arg: any) => void;
+  setFormValues: (keyToChange: any, keyValue: any) => void;
 }
 const useInputFormStore = create<InputFormStore>((set) => ({
   formValues: {
@@ -21,7 +21,14 @@ const useInputFormStore = create<InputFormStore>((set) => ({
     addOns: [],
   },
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  setFormValues: (arg: any) => set({ formValues: arg }),
+  setFormValues: (keyToChange: any, keyValue: any) =>
+    set((state) => ({
+      formValues: {
+        ...state.formValues,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        [keyToChange]: keyValue,
+      },
+    })),
 }));
 
 export default useInputFormStore;
