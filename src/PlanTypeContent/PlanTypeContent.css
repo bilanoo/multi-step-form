@@ -3,3 +3,9 @@
   flex-direction: column;
   gap: 0.6em;
 }
+
+@media only screen and (min-width: 992px) {
+  .all-plans-containers {
+    flex-direction: row;
+  }
+}
