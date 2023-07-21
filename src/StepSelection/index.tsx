@@ -1,37 +1,34 @@
+import { SelectionButton } from "./SelectionButton";
 import "./StepSelection.css";
 const StepSelection = () => {
   return (
     <div className="selection-container">
-      <div className="steps">
-        <div className="button-container">
-          <button className="selection-button">1</button>
-          <div className="steps-information">
-            <p className="step">STEP 1</p>
-            <p className="step-detail">YOUR INFO</p>
-          </div>
-        </div>
-        <div className="button-container">
-          <button className="selection-button">2</button>
-          <div className="steps-information">
-            <p className="step">STEP 2</p>
-            <p className="step-detail">SELECT PLAN</p>
-          </div>
-        </div>
-        <div className="button-container">
-          <button className="selection-button">3</button>
-          <div className="steps-information">
-            <p className="step">STEP 3</p>
-            <p className="step-detail">ADD-ONS</p>
-          </div>
-        </div>
-        <div className="button-container">
-          <button className="selection-button">4</button>
-          <div className="steps-information">
-            <p className="step">STEP 4</p>
-            <p className="step-detail">SUMMARY</p>
-          </div>
-        </div>
-      </div>
+      <ul className="steps">
+        <SelectionButton
+          to="/"
+          label="STEP 1"
+          step="1"
+          stepDetail="YOUR INFO"
+        />
+        <SelectionButton
+          to="/step2"
+          label="STEP 2"
+          step="2"
+          stepDetail="SELECT PLAN"
+        />
+        <SelectionButton
+          to="/step3"
+          label="STEP 3"
+          step="3"
+          stepDetail="ADD-ONS"
+        />
+        <SelectionButton
+          to="/step4"
+          label="STEP 4"
+          step="4"
+          stepDetail="SUMMARY"
+        />
+      </ul>
     </div>
   );
 };

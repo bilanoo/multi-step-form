@@ -32,3 +32,6 @@ const useInputFormStore = create<InputFormStore>((set) => ({
 }));
 
 export default useInputFormStore;
+
+export const useFormValues = () =>
+  useInputFormStore((state) => state.formValues);

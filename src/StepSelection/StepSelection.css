@@ -1,7 +1,6 @@
 .sidebar {
   height: 100%;
 }
-
 .selection-container {
   display: flex;
   background-image: url("../assets/images/bg-sidebar-mobile.svg");
@@ -17,21 +16,7 @@
   width: 200px;
   height: 40px;
   margin-top: 40px;
-}
-
-.selection-button {
-  width: 40px;
-  height: 40px;
-  font-weight: 900;
-  border-radius: 20px;
-  background-color: transparent;
-  border: 1px solid white;
-  cursor: pointer;
-}
-
-.selection-button:focus {
-  background-color: hsl(206, 94%, 87%);
-  color: black;
+  list-style: none;
 }
 
 @media only screen and (min-width: 992px) {
@@ -44,39 +29,6 @@
   .steps {
     flex-direction: column;
     height: 40%;
-  }
-
-  .step {
-    font-size: 0.75rem;
-    color: hsl(228, 100%, 83%);
-    margin: 0;
-  }
-
-  .step-detail {
-    font-size: 0.9rem;
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
-    color: white;
-  }
-
-  .button-container {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-  }
-
-  .steps-information {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    margin-left: 20px;
-  }
-}
-
-@media only screen and (max-width: 991px) {
-  .steps-information {
-    display: none;
   }
 }
 
