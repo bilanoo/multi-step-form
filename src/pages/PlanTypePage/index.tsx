@@ -1,11 +1,12 @@
+import "./PlanTypePage.css";
 import { useEffect, useState } from "react";
-import "./App.css";
-import StepSelection from "./StepSelection";
-import { useFormValues } from "./stores/InputFormStore.store";
+import { useFormValues } from "../../stores/InputFormStore.store";
 import { useNavigate } from "react-router-dom";
-import { UserinformationStep } from "./pages/UserInformationStep";
+import StepSelection from "../../StepSelection";
+import FormContent from "../../FormContent";
+import { PlanTypeContent } from "../../PlanTypeContent";
 
-function App() {
+export const PlanTypePage = () => {
   const { name, emailAddress, phoneNumber } = useFormValues();
   const [disabledFlag, setDisabledFlag] = useState<boolean>(true);
   const [currentStep, setCurrentStep] = useState(1);
@@ -31,32 +32,31 @@ function App() {
     // Navigate to the next step
     navigate(nextStepPath);
   }
-
   return (
-    <>
-      <main>
-        <StepSelection />
-        <div
-          style={{
-            backgroundColor: "hsl(218, 100%, 97%)",
-            display: "flex",
-            justifyContent: "center",
-          }}
+    <main>
+      <StepSelection />
+      <div
+        style={{
+          backgroundColor: "hsl(218, 100%, 97%)",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <FormContent
+          personalInfoText="Select your plan"
+          description="You have the option of monthly or yearly billing."
+          elementToRender={<PlanTypeContent />}
+        />
+      </div>
+      <div className="submit-container">
+        <button
+          className="next-step-button"
+          disabled={disabledFlag}
+          onClick={nextPage}
         >
-          <UserinformationStep />
-        </div>
-        <div className="submit-container">
-          <button
-            className="next-step-button"
-            disabled={disabledFlag}
-            onClick={nextPage}
-          >
-            Next Step
-          </button>
-        </div>
-      </main>
-    </>
+          Next Step
+        </button>
+      </div>
+    </main>
   );
-}
-
-export default App;
+};

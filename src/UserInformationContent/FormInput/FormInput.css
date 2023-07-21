@@ -18,7 +18,6 @@ p {
 .input-field:focus {
   border-radius: 5px;
   border: 1px solid lightgray;
-  width: 100%;
   box-shadow: none;
   font-family: inherit;
   font-size: 1rem;

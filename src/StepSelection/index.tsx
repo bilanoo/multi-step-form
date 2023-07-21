@@ -5,7 +5,7 @@ const StepSelection = () => {
     <div className="selection-container">
       <ul className="steps">
         <SelectionButton
-          to="/"
+          to="/step1"
           label="STEP 1"
           step="1"
           stepDetail="YOUR INFO"
