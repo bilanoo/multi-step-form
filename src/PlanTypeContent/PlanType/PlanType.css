@@ -1,0 +1,46 @@
+input[type="radio"] {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.transition {
+  transition: all 0.3s ease-out;
+}
+
+label {
+  display: flex; /* or inline-block */
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0;
+  color: white;
+  border-radius: 10px;
+  height: 5em;
+  transition: all 0.3s ease-out;
+  border: 1px solid lightgray;
+  width: 80%;
+}
+
+input[type="radio"]:checked + label {
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(243, 100%, 62%);
+}
+
+input[type="radio"]:hover + label {
+  border-color: hsl(243, 100%, 62%);
+}
+
+.plan-type-container {
+  display: flex;
+}
+
+.plan-type-icon {
+  width: 40px;
+  padding-left: 20px;
+}
+
+.plan-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -25,8 +25,8 @@ p {
 .form-values-container {
   font-family: Ubuntu, sans-serif;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
   justify-content: start;
+  grid-template-columns: 1fr; /* Add this line to make grid items take full width */
 }
 
 @media only screen and (min-width: 992px) {
