@@ -7,7 +7,7 @@ import { UserinformationStep } from "./pages/UserInformationStep/index.tsx";
 import { PlanTypePage } from "./pages/PlanTypePage/index.tsx";
 const router = createBrowserRouter([
   {
-    path: "/step1",
+    path: "/",
     element: <UserinformationStep />,
     errorElement: <ErrorPage />,
   },
