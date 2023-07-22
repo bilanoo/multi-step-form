@@ -1,5 +1,5 @@
 import useInputFormStore from "../../stores/InputFormStore.store";
-import "./planType.css";
+import "./PlanType.css";
 
 interface PlanTypeProps {
   iconSource: string;
