@@ -7,7 +7,7 @@ import FormContent from "../../FormContent";
 import { PlanTypeContent } from "../../PlanTypeContent";
 
 export const PlanTypePage = () => {
-  const { name, emailAddress, phoneNumber, planSelected } = useFormValues();
+  const { planSelected } = useFormValues();
   const [disabledFlag, setDisabledFlag] = useState<boolean>(true);
   const [currentStep, setCurrentStep] = useState(1);
 

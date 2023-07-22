@@ -7,7 +7,6 @@ import IconPro from "../../src/assets/images/icon-pro.svg";
 
 import { IOSSwitch } from "./Switch";
 import useInputFormStore from "../stores/InputFormStore.store";
-import { useState } from "react";
 
 export const PlanTypeContent = () => {
   const {
@@ -19,10 +18,7 @@ export const PlanTypeContent = () => {
     setPlanSelected,
   } = useInputFormStore((state) => state);
 
-  function handleChange(
-    event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean
-  ): void {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
     setPlanTypeSwitchFlag(event.target.checked);
 
     if (formValues.planSelected && event.target.checked) {
