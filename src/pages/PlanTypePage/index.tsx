@@ -34,9 +34,8 @@ export const PlanTypePage = () => {
 
   function previousPage(): void {
     // Generate the next step's path dynamically based on the current step number
-    const previousStepPage = `/step${currentStep}`;
+    const previousStepPage = `/`;
 
-    console.log(currentStep);
     // Navigate to the next step
     navigate(previousStepPage);
   }
