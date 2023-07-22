@@ -12,6 +12,7 @@ p {
   flex-direction: column;
   height: fit-content;
   padding-left: 20px;
+  padding-right: 25px;
 }
 
 .input-field,

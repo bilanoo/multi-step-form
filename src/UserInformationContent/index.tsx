@@ -68,14 +68,16 @@ export const UserInformationContent = () => {
         placeholder="e.g. stephenking@loren.com"
         handleChange={inputEmailChange}
       />
-      <FormInput
-        typeOfInput="text"
-        namePropField="phoneNumber"
-        value={formValues.phoneNumber}
-        inputDescriptionText="Phone Number"
-        placeholder="e.g. 0767 9238 639"
-        handleChange={inputPhoneNumber}
-      />
+      <div style={{ marginBottom: "20px" }}>
+        <FormInput
+          typeOfInput="text"
+          namePropField="phoneNumber"
+          value={formValues.phoneNumber}
+          inputDescriptionText="Phone Number"
+          placeholder="e.g. 0767 9238 639"
+          handleChange={inputPhoneNumber}
+        />
+      </div>
     </>
   );
 };

@@ -4,20 +4,24 @@ interface FormValues {
   name: string;
   emailAddress: string;
   phoneNumber: string;
-  planSelected: string;
+  planSelected: number;
   addOns: string[];
 }
 
 interface InputFormStore {
   formValues: FormValues;
   setFormValues: (keyToChange: any, keyValue: any) => void;
+  planTypeSwitch: boolean;
+  planSelected: string;
+  setPlanSelected: (planName: string) => void;
+  setPlanTypeSwitchFlag: (value: boolean) => void;
 }
 const useInputFormStore = create<InputFormStore>((set) => ({
   formValues: {
     name: "",
     emailAddress: "",
     phoneNumber: "",
-    planSelected: "",
+    planSelected: 0,
     addOns: [],
   },
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -29,6 +33,10 @@ const useInputFormStore = create<InputFormStore>((set) => ({
         [keyToChange]: keyValue,
       },
     })),
+  planTypeSwitch: false,
+  planSelected: "",
+  setPlanSelected: (planName: string) => set({ planSelected: planName }),
+  setPlanTypeSwitchFlag: (value: boolean) => set({ planTypeSwitch: value }),
 }));
 
 export default useInputFormStore;

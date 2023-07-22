@@ -21,6 +21,11 @@ label {
   width: 80%;
 }
 
+.selected {
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(243, 100%, 62%);
+}
+
 input[type="radio"]:checked + label {
   background-color: hsl(231, 100%, 99%);
   border-color: hsl(243, 100%, 62%);

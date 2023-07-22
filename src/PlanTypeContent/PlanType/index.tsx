@@ -1,15 +1,22 @@
+import useInputFormStore from "../../stores/InputFormStore.store";
 import "./planType.css";
 
 interface PlanTypeProps {
   iconSource: string;
   planName: string;
   planPrice: string;
+  isSelected: boolean;
+  handleClick: (event: React.MouseEvent<HTMLLabelElement, MouseEvent>) => void;
 }
 export const PlanType = ({
   iconSource,
   planName,
   planPrice,
+  isSelected,
+  handleClick,
 }: PlanTypeProps) => {
+  const { planTypeSwitch } = useInputFormStore((state) => state);
+
   return (
     <>
       <div className="plan-type-container">
@@ -20,7 +27,12 @@ export const PlanType = ({
           value={planName}
         ></input>
 
-        <label htmlFor={planName}>
+        <label
+          className={`plan-type-container ${isSelected ? "selected" : ""}`}
+          htmlFor={planName}
+          onClick={handleClick}
+          id={planName.toLowerCase()}
+        >
           <img
             src={iconSource}
             alt="plan-type-icon"
@@ -48,6 +60,22 @@ export const PlanType = ({
             >
               ${planPrice}/mo
             </p>
+            {planTypeSwitch && (
+              <p
+                style={{
+                  paddingTop: 0,
+                  width: "fit-content",
+                  height: "fit-content",
+                  color: "hsl(213, 96%, 18%)",
+                  fontWeight: "700",
+                  margin: "0",
+                  paddingLeft: "10px",
+                  fontSize: ".77rem",
+                }}
+              >
+                2 months free
+              </p>
+            )}
           </div>
         </label>
       </div>

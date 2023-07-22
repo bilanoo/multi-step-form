@@ -7,20 +7,19 @@ import FormContent from "../../FormContent";
 import { PlanTypeContent } from "../../PlanTypeContent";
 
 export const PlanTypePage = () => {
-  const { name, emailAddress, phoneNumber } = useFormValues();
+  const { name, emailAddress, phoneNumber, planSelected } = useFormValues();
   const [disabledFlag, setDisabledFlag] = useState<boolean>(true);
   const [currentStep, setCurrentStep] = useState(1);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (name && emailRegex.test(emailAddress) && phoneNumber.length === 13) {
+    if (planSelected) {
       setDisabledFlag(false);
     } else {
       setDisabledFlag(true);
     }
-  }, [name, emailAddress, phoneNumber]);
+  }, [planSelected]);
 
   function nextPage(): void {
     // Increment the current step number
@@ -31,6 +30,15 @@ export const PlanTypePage = () => {
 
     // Navigate to the next step
     navigate(nextStepPath);
+  }
+
+  function previousPage(): void {
+    // Generate the next step's path dynamically based on the current step number
+    const previousStepPage = `/step${currentStep}`;
+
+    console.log(currentStep);
+    // Navigate to the next step
+    navigate(previousStepPage);
   }
   return (
     <main>
@@ -49,6 +57,13 @@ export const PlanTypePage = () => {
         />
       </div>
       <div className="submit-container">
+        <button
+          className="go-back-button"
+          disabled={disabledFlag}
+          onClick={previousPage}
+        >
+          Go Back
+        </button>
         <button
           className="next-step-button"
           disabled={disabledFlag}
