@@ -68,4 +68,12 @@ input[type="radio"]:hover + label {
     margin-top: auto;
     padding-bottom: 10px;
   }
+
+  .submit-container {
+    width: 90%;
+  }
+
+  .go-back-button {
+    margin-left: 70px;
+  }
 }

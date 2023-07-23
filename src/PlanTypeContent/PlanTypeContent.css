@@ -32,4 +32,8 @@
   .all-plans-containers {
     flex-direction: row;
   }
+
+  .plan-switch {
+    width: 84%;
+  }
 }

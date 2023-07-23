@@ -54,7 +54,6 @@ export const PlanTypeContent = () => {
     setPlanSelected(event.currentTarget.id);
   }
 
-  console.log(planSelected);
   return (
     <>
       <div className="all-plans-containers">
