@@ -20,6 +20,7 @@ export const PlanTypeContent = () => {
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
     setPlanTypeSwitchFlag(event.target.checked);
+    console.log(event.target.checked);
 
     if (formValues.planSelected && event.target.checked) {
       setFormValues("planSelected", formValues.planSelected * 10);
@@ -87,11 +88,7 @@ export const PlanTypeContent = () => {
         >
           Monthly
         </p>
-        <IOSSwitch
-          sx={{ m: 1 }}
-          onChange={handleChange}
-          checked={planTypeSwitch}
-        />
+        <IOSSwitch sx={{ m: 1 }} onChange={handleChange} />
         <p
           className={`plan-type-switch-text ${
             planTypeSwitch ? "selected" : ""

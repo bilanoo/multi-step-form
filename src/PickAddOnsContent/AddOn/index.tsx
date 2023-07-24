@@ -1,4 +1,5 @@
 import checkmarkIcon from "../../assets/images/icon-checkmark.svg";
+import useInputFormStore from "../../stores/InputFormStore.store";
 import "./AddOn.css";
 
 interface AddOnProps {
@@ -17,6 +18,7 @@ export const AddOn = ({
   id,
   handleClick,
 }: AddOnProps) => {
+  const { planTypeSwitch } = useInputFormStore((state) => state);
   return (
     <>
       <div className="plan-type-container">
@@ -68,7 +70,7 @@ export const AddOn = ({
                 fontSize: ".875rem",
               }}
             >
-              +${price}/mo
+              +${price}/{`${planTypeSwitch ? "yr" : "mo"}`}
             </p>
           </div>
         </label>

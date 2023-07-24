@@ -24,7 +24,7 @@ export const PickAddOnsPage = () => {
 
   function previousPage(): void {
     // Generate the next step's path dynamically based on the current step number
-    const previousStepPage = `/step4`;
+    const previousStepPage = `/step2`;
 
     // Navigate to the next step
     navigate(previousStepPage);
