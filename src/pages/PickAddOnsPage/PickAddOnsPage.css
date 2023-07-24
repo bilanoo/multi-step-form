@@ -1,0 +1,39 @@
+.all-plans-containers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+
+.plan-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-left: 10px;
+  margin-top: 20px;
+  background-color: hsl(231, 100%, 99%);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  height: 3em;
+}
+
+.plan-type-switch-text {
+  width: fit-content;
+  padding: 0;
+  color: hsl(231, 11%, 63%);
+  font-weight: 700;
+}
+
+.selected {
+  color: hsl(213, 96%, 18%);
+}
+
+@media only screen and (min-width: 992px) {
+  .all-plans-containers {
+    flex-direction: row;
+  }
+
+  .plan-switch {
+    width: 84%;
+  }
+}

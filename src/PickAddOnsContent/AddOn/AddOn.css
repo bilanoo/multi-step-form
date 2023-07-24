@@ -1,0 +1,108 @@
+input[type="checkbox"] {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.transition {
+  transition: all 0.3s ease-out;
+}
+
+.custom-checkbox {
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+}
+
+.checkmark-icon {
+  position: relative;
+  width: 15px;
+  align-self: center;
+}
+
+.checked {
+  background-color: hsl(243, 100%, 62%);
+}
+
+label {
+  display: grid; /* or inline-block */
+  grid-template-columns: auto 1fr auto;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0;
+  color: white;
+  border-radius: 10px;
+  height: 5em;
+  transition: all 0.3s ease-out;
+  border: 1px solid lightgray;
+  width: 80%;
+  margin-left: 20px;
+}
+
+.selected {
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(243, 100%, 62%);
+}
+
+input[type="checkbox"]:checked + label {
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(243, 100%, 62%);
+}
+
+input[type="checkbox"]:hover + label {
+  border-color: hsl(243, 100%, 62%);
+}
+
+.plan-type-container {
+  display: flex;
+}
+
+.plan-type-icon {
+  width: 40px;
+  padding-left: 20px;
+}
+
+.plan-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 992px) {
+  label {
+    /* Adjust the label width to fit the content and the checkbox */
+    width: 80%;
+    flex-direction: row; /* Add spacing between content and checkbox */
+    grid-template-columns: 14px 40px auto;
+    /* Align the content vertically to center */
+    height: 4em; /* Adjust the height for better alignment */
+    margin-left: 0; /* Remove the margin for better alignment */
+    /* Apply padding to the label to create spacing */
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+  }
+
+  .plan-information {
+    /* Adjust the plan information styles for the larger screen */
+    align-items: flex-start; /* Align the text to the start of the row */
+    justify-content: start; /* Adjust the text alignment */
+    padding-bottom: 10px; /* Add padding to the plan information */
+    width: fit-content;
+  }
+
+  .go-back-button {
+    margin-left: 70px;
+  }
+
+  .custom-checkbox {
+    margin-top: auto;
+    margin-bottom: 33px;
+  }
+}
