@@ -1,5 +1,3 @@
-import { useState } from "react";
-import useInputFormStore from "../../stores/InputFormStore.store";
 import checkmarkIcon from "../../assets/images/icon-checkmark.svg";
 import "./AddOn.css";
 
@@ -8,27 +6,29 @@ interface AddOnProps {
   price: number;
   description: string;
   isSelected: boolean;
+  id: string;
   handleClick: (event: React.MouseEvent<HTMLLabelElement, MouseEvent>) => void;
 }
-export const AddOn = () => {
-  const [selected, setSelected] = useState<boolean>(false);
-  function handleClick(
-    event: React.MouseEvent<HTMLInputElement, MouseEvent>
-  ): void {
-    setSelected(event.currentTarget.checked);
-  }
-
+export const AddOn = ({
+  name,
+  price,
+  description,
+  isSelected,
+  id,
+  handleClick,
+}: AddOnProps) => {
   return (
     <>
       <div className="plan-type-container">
-        <label className={`${selected ? "selected" : ""}`}>
-          <input
-            type="checkbox"
-            name={"plan-type"}
-            onClick={handleClick}
-          ></input>
-          <div className={`custom-checkbox ${selected ? "checked" : ""}`}>
-            {selected && (
+        <label
+          className={`${isSelected ? "selected" : ""}`}
+          htmlFor={id}
+          id={id}
+          onClick={handleClick}
+        >
+          <input type="checkbox" name={"plan-type"} value={id} id={id}></input>
+          <div className={`custom-checkbox ${isSelected ? "checked" : ""}`}>
+            {isSelected && (
               <img
                 src={checkmarkIcon}
                 alt="icon-checkmark"
@@ -46,7 +46,7 @@ export const AddOn = () => {
                 paddingLeft: "10px",
               }}
             >
-              Online service
+              {name}
             </p>
             <p
               style={{
@@ -57,7 +57,7 @@ export const AddOn = () => {
                 fontSize: ".875rem",
               }}
             >
-              Access to multiplayer games
+              {description}
             </p>
             <p
               style={{
@@ -68,7 +68,7 @@ export const AddOn = () => {
                 fontSize: ".875rem",
               }}
             >
-              +$1/mo
+              +${price}/mo
             </p>
           </div>
         </label>

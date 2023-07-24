@@ -3,11 +3,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StepSelection from "../../StepSelection";
 import FormContent from "../../FormContent";
-import { PlanTypeContent } from "../../PlanTypeContent";
 import { PickAddOnsContent } from "../../PickAddOnsContent";
 
 export const PickAddOnsPage = () => {
-  const [disabledFlag, setDisabledFlag] = useState<boolean>(false);
+  const [isSelected, setSelected] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(1);
 
   const navigate = useNavigate();
@@ -25,7 +24,7 @@ export const PickAddOnsPage = () => {
 
   function previousPage(): void {
     // Generate the next step's path dynamically based on the current step number
-    const previousStepPage = `/step2`;
+    const previousStepPage = `/step4`;
 
     // Navigate to the next step
     navigate(previousStepPage);
@@ -43,22 +42,19 @@ export const PickAddOnsPage = () => {
         <FormContent
           personalInfoText="Pick add-ons"
           description="Add-ons help enhance your gaming experience."
-          elementToRender={<PickAddOnsContent />}
+          elementToRender={
+            <PickAddOnsContent
+              isSelected={isSelected}
+              setSelected={setSelected}
+            />
+          }
         />
       </div>
       <div className="submit-container">
-        <button
-          className="go-back-button"
-          disabled={disabledFlag}
-          onClick={previousPage}
-        >
+        <button className="go-back-button" onClick={previousPage}>
           Go Back
         </button>
-        <button
-          className="next-step-button"
-          disabled={disabledFlag}
-          onClick={nextPage}
-        >
+        <button className="next-step-button" onClick={nextPage}>
           Next Step
         </button>
       </div>
